@@ -5,8 +5,8 @@
 #ifndef MY_PROJECT_THREEDIAGONALMATRIXSOLVER_HPP
 #define MY_PROJECT_THREEDIAGONALMATRIXSOLVER_HPP
 
-#include "my_project/Matrix/ThreeDiagonalMatrix.hpp"
-#include "my_project/SlaeBaseException.hpp"
+#include "SLAE/Matrix/ThreeDiagonalMatrix.hpp"
+#include "SLAE/SlaeBaseException.hpp"
 #include <sstream>
 
 namespace Slae::Solvers {

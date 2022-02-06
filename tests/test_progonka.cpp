@@ -3,9 +3,9 @@
 //
 
 #include "gtest/gtest.h"
-#include <my_project/SlaeBaseException.hpp>
-#include <my_project/Matrix/ThreeDiagonalMatrix.hpp>
-#include <my_project/Solvers/ThreeDiagonalMatrixSolver.hpp>
+#include <SLAE/SlaeBaseException.hpp>
+#include <SLAE/Matrix/ThreeDiagonalMatrix.hpp>
+#include <SLAE/Solvers/ThreeDiagonalMatrixSolver.hpp>
 
 TEST(MATRIX_THREE, CONSTRUCT_ZERO) {
 

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(my_project)
+project(SLAE)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -12,7 +12,7 @@ if (WIN32)
     set(CMAKE_CXX_STANDARD_LIBRARIES "-static-libgcc -static-libstdc++ -lwsock32 -lws2_32 -lrt ${CMAKE_CXX_STANDARD_LIBRARIES}")
 endif (WIN32)
 
-add_library(my_project ${MY_PROJECT_SOURCES})
-target_link_libraries(my_project PUBLIC )
+add_library(SLAE ${MY_PROJECT_SOURCES})
+target_link_libraries(SLAE PUBLIC )
 
-target_include_directories(my_project PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(SLAE PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
