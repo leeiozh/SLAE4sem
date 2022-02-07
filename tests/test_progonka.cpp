@@ -125,7 +125,6 @@ TEST(MATRIX_THREE, SOLVE_HARD) {
     res = Slae::Solvers::solveThreeDiagonal(my_matr, col);
 
     for (int i = 3; i < size - 3; ++i) {
-        std::cout << std::setprecision(10) << res[i] << std::endl;
         ASSERT_NEAR(res[i], 1.99998, tolerance);
     }
 }

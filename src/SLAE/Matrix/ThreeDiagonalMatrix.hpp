@@ -45,6 +45,7 @@ public:
      * @param i number of row
      * @param j number of column
      * @return (i, j) element
+     * @throw SlaeBaseException when i >= size, j not in {0, 1, 2}
      */
     double &operator()(int i, int j);
 
@@ -53,8 +54,9 @@ public:
      * @param i number of row
      * @param j number of column
      * @return (i, j) element
+     * @throw SlaeBaseException when i >= size, j not in {0, 1, 2}
      */
-    const double &operator()(int i, int j) const;
+    [[nodiscard]] const double &operator()(int i, int j) const;
 
 };
 } // namespace Slae::Matrix

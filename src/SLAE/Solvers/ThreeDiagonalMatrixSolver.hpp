@@ -16,8 +16,10 @@ namespace Slae::Solvers {
  * @param matrix three diagonal matrix
  * @param col vector of free coefficients
  * @return vector of solutions
+ * @throw SlaeBaseException when size matrix != size col
  */
-std::vector<double> solveThreeDiagonal(const Matrix::ThreeDiagonalMatrix &matrix, const std::vector<double> &col);
+[[nodiscard]] std::vector<double>
+solveThreeDiagonal(const Matrix::ThreeDiagonalMatrix &matrix, const std::vector<double> &col);
 
 } // namespace Slae::Solvers
 
