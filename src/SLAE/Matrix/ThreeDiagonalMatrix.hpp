@@ -11,21 +11,49 @@
 
 namespace Slae::Matrix {
 class ThreeDiagonalMatrix {
+    /**
+     * class for three diagonal quadratic matrix
+     */
 private:
-    int size_ = 0;
-    std::vector<double> matrix_;
+    int size_ = 0; // size for quadratic matrix
+    std::vector<double> matrix_; // data of matrix coefficients
 
 public:
+    /**
+     * constructor for three diagonal quadratic matrix
+     * @param size number of columns/rows
+     */
     inline explicit ThreeDiagonalMatrix(int size) : size_(size), matrix_(std::vector<double>(3 * size)) {};
 
+    /**
+     * manufacture for zero quadratic matrix
+     * @param size number of columns/rows
+     * @return zero quadratic matrix with *size* columns/rows
+     */
     static ThreeDiagonalMatrix Zero(int size);
 
+    /**
+     * getter for size field
+     * @return size of matrix
+     */
     [[nodiscard]] int size() const noexcept {
         return size_;
     }
 
+    /**
+     * operator for connections with (i, j) elements
+     * @param i number of row
+     * @param j number of column
+     * @return (i, j) element
+     */
     double &operator()(int i, int j);
 
+    /**
+     * const operator for connections with (i, j) elements
+     * @param i number of row
+     * @param j number of column
+     * @return (i, j) element
+     */
     const double &operator()(int i, int j) const;
 
 };

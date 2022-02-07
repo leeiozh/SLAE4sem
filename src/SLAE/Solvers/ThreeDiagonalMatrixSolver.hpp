@@ -11,6 +11,12 @@
 
 namespace Slae::Solvers {
 
+/**
+ * solver for three diagonal matrix by progonka method
+ * @param matrix three diagonal matrix
+ * @param col vector of free coefficients
+ * @return vector of solutions
+ */
 std::vector<double> solveThreeDiagonal(const Matrix::ThreeDiagonalMatrix &matrix, const std::vector<double> &col);
 
 } // namespace Slae::Solvers
