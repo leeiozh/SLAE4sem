@@ -462,7 +462,7 @@ class GTEST_API_ Test {
   // Logs a property for the current test, test suite, or for the entire
   // invocation of the test program when used outside of the context of a
   // test suite.  Only the last value for a given key is remembered.  These
-  // are public static so they can be called from utility functions that are
+  // are public static so they can be called from Utility functions that are
   // not members of the test fixture.  Calls to RecordProperty made during
   // lifespan of the test (from the moment its constructor starts to the
   // moment its destructor finishes) will be output in XML as attributes of

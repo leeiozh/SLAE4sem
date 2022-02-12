@@ -634,7 +634,7 @@ typedef struct _RTL_CRITICAL_SECTION GTEST_CRITICAL_SECTION;
 # define GTEST_CAN_STREAM_RESULTS_ 1
 #endif
 
-// Defines some utility macros.
+// Defines some Utility macros.
 
 // The GNU compiler emits a warning if nested "if" statements are followed by
 // an "else" statement and braces are not used to explicitly disambiguate the

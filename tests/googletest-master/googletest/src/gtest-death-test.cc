@@ -144,7 +144,7 @@ static bool g_in_fast_death_test_child = false;
 // Returns a Boolean value indicating whether the caller is currently
 // executing in the context of the death test child process.  Tools such as
 // Valgrind heap checkers may need this to modify their behavior in death
-// tests.  IMPORTANT: This is an internal utility.  Using it may break the
+// tests.  IMPORTANT: This is an internal Utility.  Using it may break the
 // implementation of death tests.  User code MUST NOT use it.
 bool InDeathTestChild() {
 # if GTEST_OS_WINDOWS || GTEST_OS_FUCHSIA
@@ -1263,7 +1263,7 @@ static int ExecDeathTestChildMain(void* child_arg) {
 #  endif  // GTEST_OS_QNX
 
 #  if GTEST_HAS_CLONE
-// Two utility routines that together determine the direction the stack
+// Two Utility routines that together determine the direction the stack
 // grows.
 // This could be accomplished more elegantly by a single recursive
 // function, but we want to guard against the unlikely possibility of

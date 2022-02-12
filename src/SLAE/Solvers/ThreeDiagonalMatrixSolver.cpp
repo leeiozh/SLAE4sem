@@ -13,6 +13,7 @@ std::vector<double> solveThreeDiagonal(const Matrix::ThreeDiagonalMatrix &matrix
     std::vector<double> result(matrix.size());
     std::vector<double> coeffs(matrix.size() * 2); // коэффициенты гамма и бета соотвественно
 
+#ifndef NDEBUG
     if (matrix.size() != col.size()) {
         // исключение выбрасывается в случае несовпадения размеров маттрицы и столбца свободных членов
         std::stringstream buff;
@@ -20,7 +21,7 @@ std::vector<double> solveThreeDiagonal(const Matrix::ThreeDiagonalMatrix &matrix
              << std::endl;
         throw SlaeBaseExceptionCpp(buff.str());
     }
-
+#endif //NDEBUG
     coeffs[0] = -matrix(0, 1) / matrix(0, 0);
     coeffs[1] = col[0] / matrix(0, 0);
 

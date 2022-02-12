@@ -334,7 +334,7 @@ TEST(SCOPED_TRACETest, WorksConcurrently) {
 }
 #endif  // GTEST_IS_THREADSAFE
 
-// Tests basic functionality of the ScopedTrace utility (most of its features
+// Tests basic functionality of the ScopedTrace Utility (most of its features
 // are already tested in SCOPED_TRACETest).
 TEST(ScopedTraceTest, WithExplicitFileAndLine) {
   testing::ScopedTrace trace("explicit_file.cc", 123, "expected trace message");
