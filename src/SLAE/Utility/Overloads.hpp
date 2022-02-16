@@ -34,7 +34,7 @@ std::vector<T> operator*(const T &k, const std::vector<T> &b) {
  */
 template <typename T>
 std::vector<T> operator*(const std::vector<T> &b, const T &k) {
-    return b * k;
+    return k * b;
 };
 
 /***
