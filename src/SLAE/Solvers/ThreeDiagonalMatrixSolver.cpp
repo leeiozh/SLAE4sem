@@ -19,7 +19,7 @@ std::vector<double> solveThreeDiagonal(const Matrix::ThreeDiagonalMatrix &matrix
         std::stringstream buff;
         buff << "Sizes didn't matched! Matrix size " << matrix.size() << "! Column size " << col.size() << "!"
              << std::endl;
-        throw SlaeBaseExceptionCpp(buff.str());
+        throw SlaeBaseException(buff.str());
     }
 #endif //NDEBUG
     coeffs[0] = -matrix(0, 1) / matrix(0, 0);

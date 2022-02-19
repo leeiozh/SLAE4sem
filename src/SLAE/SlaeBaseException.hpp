@@ -12,7 +12,7 @@
 
 namespace Slae {
 
-class SlaeBaseExceptionCpp : public std::exception {
+class SlaeBaseException : public std::exception {
   /* Базовый класс исключения в пакетах С++ */
 protected:
   /* Поля класса */
@@ -23,14 +23,14 @@ public:
   /** Constructor (C++ STL strings).
      *  @param message The error message.
    */
-  explicit SlaeBaseExceptionCpp(const std::string& message) noexcept;
+  explicit SlaeBaseException(const std::string& message) noexcept;
   /** Constructor (C strings).
      *  @param message C-style string error message.
      *                 The string contents are copied upon construction.
      *                 Hence, responsibility for deleting the char* lies
      *                 with the caller.
    */
-  explicit SlaeBaseExceptionCpp(const char* message) noexcept;
+  explicit SlaeBaseException(const char* message) noexcept;
 
   /*  Методы класса */
   /** Returns a pointer to the (constant) error description.

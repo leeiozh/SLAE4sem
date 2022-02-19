@@ -23,6 +23,16 @@ private:
     std::vector<idx_t> cols_;  // Вектор номеров столбцов, соответствующих значениям (размер N - кол-во ненулевых элементов)
     std::vector<idx_t> rows_;  // Вектор индексации строк размера H+1, первый элемент = 0 в качестве запирающего
 
+    template <typename El>
+    friend std::vector<El>
+    // функция решения СЛАУ методом Якоби
+    Jacobi(const CSR<El> &A, const std::vector<El> &b, const std::vector<El> &init_res, const El &tolerance);
+
+    template <typename El>
+    friend std::vector<El>
+    // // функция решения СЛАУ методом Гаусса-Зейделя
+    GaussSeidel(const CSR<El> &A, const std::vector<El> &b, const std::vector<El> &init_res, const El &tolerance);
+
 public:
     /***
      * Конструктор разреженной матрицы по готовым векторам с внутренней структурой
@@ -76,12 +86,12 @@ public:
         if (i > H_ || i < 0) {
             std::stringstream buff;
             buff << "Index more H size! H size " << H_ << "! Index " << i << "!" << std::endl;
-            throw Slae::SlaeBaseExceptionCpp(buff.str());
+            throw Slae::SlaeBaseException(buff.str());
         }
         if (j > W_ || j < 0) {
             std::stringstream buff;
             buff << "Index more W size! W size " << W_ << "! Index " << j << "!" << std::endl;
-            throw Slae::SlaeBaseExceptionCpp(buff.str());
+            throw Slae::SlaeBaseException(buff.str());
         }
 #endif //NDEBUG
 
@@ -103,7 +113,7 @@ public:
         if (b.size() != W_) {
             std::stringstream buff;
             buff << "b and matrix nust have same size! b_size " << b.size() << "! H_size " << H_ << "!" << std::endl;
-            throw Slae::SlaeBaseExceptionCpp(buff.str());
+            throw Slae::SlaeBaseException(buff.str());
         }
 #endif // NDEBUG
         std::vector<elm_t> res(this->H_);

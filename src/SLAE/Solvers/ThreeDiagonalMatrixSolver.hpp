@@ -2,8 +2,8 @@
 // Created by leeiozh on 05.02.2022.
 //
 
-#ifndef MY_PROJECT_THREEDIAGONALMATRIXSOLVER_HPP
-#define MY_PROJECT_THREEDIAGONALMATRIXSOLVER_HPP
+#ifndef SLAE_THREEDIAGONALMATRIXSOLVER_HPP
+#define SLAE_THREEDIAGONALMATRIXSOLVER_HPP
 
 #include "SLAE/Matrix/ThreeDiagonalMatrix.hpp"
 #include "SLAE/SlaeBaseException.hpp"
@@ -23,4 +23,4 @@ solveThreeDiagonal(const Matrix::ThreeDiagonalMatrix &matrix, const std::vector<
 
 } // namespace Slae::Solvers
 
-#endif //MY_PROJECT_THREEDIAGONALMATRIXSOLVER_HPP
+#endif //SLAE_THREEDIAGONALMATRIXSOLVER_HPP

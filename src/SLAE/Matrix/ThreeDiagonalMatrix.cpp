@@ -12,13 +12,13 @@ double &ThreeDiagonalMatrix::operator()(int i, int j) {
         // исключение срабатывает в случае обращения к строке, превышающей размер матрицы
         std::stringstream buff;
         buff << "Wrong index i! Index " << i << "! Size " << size_ << "!" << std::endl;
-        throw Slae::SlaeBaseExceptionCpp(buff.str());
+        throw Slae::SlaeBaseException(buff.str());
     }
     if (j > 2 || j < 0) {
         // исключение срабатывает в случае обращения к элементу, не находящемуся на главной и соседних диагоналях
         std::stringstream buff;
         buff << "Wrong index j! Index " << j << "!" << std::endl;
-        throw Slae::SlaeBaseExceptionCpp(buff.str());
+        throw Slae::SlaeBaseException(buff.str());
     }
 #endif
     // матрица хранится одним большим вектором по 3 значения из каждой строки подряд
@@ -31,13 +31,13 @@ const double &ThreeDiagonalMatrix::operator()(int i, int j) const {
         // исключение срабатывает в случае обращения к строке, превышающей размер матрицы
         std::stringstream buff;
         buff << "Wrong index i! Index " << i << "! Size " << size_ << "!" << std::endl;
-        throw Slae::SlaeBaseExceptionCpp(buff.str());
+        throw Slae::SlaeBaseException(buff.str());
     }
     if (j > 2 || j < 0) {
         // исключение срабатывает в случае обращения к элементу, не находящемуся на главной и соседних диагоналях
         std::stringstream buff;
         buff << "Wrong index j! Index " << j << "!" << std::endl;
-        throw Slae::SlaeBaseExceptionCpp(buff.str());
+        throw Slae::SlaeBaseException(buff.str());
     }
 #endif
     // матрица хранится одним большим вектором по 3 значения из каждой строки подряд

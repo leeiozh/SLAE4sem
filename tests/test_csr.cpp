@@ -3,7 +3,6 @@
 //
 #include "gtest/gtest.h"
 #include <SLAE/SlaeBaseException.hpp>
-#include <SLAE/Matrix/DenseMatrix.hpp>
 #include <SLAE/Sparse/CSR.hpp>
 #include <SLAE/Utility/Triplet.hpp>
 #include <SLAE/Utility/Overloads.hpp>
@@ -22,7 +21,7 @@ TEST(CSR_SIMPLE, CONSTRUCT) {
     bool isCaught = false;
     try {
         auto tmp = my_csr(10, 10);
-    } catch (const Slae::SlaeBaseExceptionCpp &err) {
+    } catch (const Slae::SlaeBaseException &err) {
         isCaught = true;
     }
     ASSERT_TRUE(isCaught);
@@ -46,7 +45,7 @@ TEST(CSR_SIMPLE, PRODUCT_VEC) {
     try {
         vec.push_back(45);
         auto tmp = my_csr * vec;
-    } catch (const Slae::SlaeBaseExceptionCpp &err) {
+    } catch (const Slae::SlaeBaseException &err) {
         isCaught = true;
     }
     ASSERT_TRUE(isCaught);

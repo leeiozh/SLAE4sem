@@ -52,7 +52,7 @@ T operator*(const std::vector<T> &a, const std::vector<T> &b) {
     if (a.size() != b.size()) {
         std::stringstream buff;
         buff << "Vectors must have same size! A.size " << a.size() << "! B.size " << b.size() << "!" << std::endl;
-        throw Slae::SlaeBaseExceptionCpp(buff.str());
+        throw Slae::SlaeBaseException(buff.str());
     }
 #endif //NDEBUG
 
@@ -72,7 +72,7 @@ T operator*(const std::vector<T> &a, const std::vector<T> &b) {
  */
 template <typename T>
 std::vector<T> operator-(const std::vector<T> &a, const std::vector<T> &b) {
-    return a + (-1) * b;
+    return a + static_cast<T>(-1) * b;
 };
 
 /***
@@ -89,13 +89,14 @@ std::vector<T> operator+(const std::vector<T> &a, const std::vector<T> &b) {
     if (a.size() != b.size()) {
         std::stringstream buff;
         buff << "Vectors must have same size!" << std::endl;
-        throw Slae::SlaeBaseExceptionCpp(buff.str());
+        throw Slae::SlaeBaseException(buff.str());
     }
 #endif //NDEBUG
-    for (size_t i = 0; i < b.size(); ++i) {
-        a[i] += b[i];
+    std::vector<T> res(a.size());
+    for(size_t i = 0; i < a.size(); ++i){
+        res[i] = a[i] + b[i];
     }
-    return a;
+    return res;
 };
 
 /**

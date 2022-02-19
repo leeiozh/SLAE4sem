@@ -5,13 +5,13 @@
 #include "gtest/gtest.h"
 #include <SLAE/SlaeBaseException.hpp>
 
-void throwException() { throw Slae::SlaeBaseExceptionCpp("Hi"); }
+void throwException() { throw Slae::SlaeBaseException("Hi"); }
 
 TEST(EXCEPTION, EXCEPTION_HI) {
     bool isCaught = false;
     try {
         throwException();
-    } catch (const Slae::SlaeBaseExceptionCpp &err) {
+    } catch (const Slae::SlaeBaseException &err) {
         isCaught = true;
     }
     ASSERT_TRUE(isCaught);

@@ -30,7 +30,7 @@ TEST(DENSE_SIMPLE, CONSTRUCT) {
     bool isCaught = false;
     try {
         auto tmp = my_dense(10, 10);
-    } catch (const Slae::SlaeBaseExceptionCpp &err) {
+    } catch (const Slae::SlaeBaseException &err) {
         isCaught = true;
     }
     ASSERT_TRUE(isCaught);

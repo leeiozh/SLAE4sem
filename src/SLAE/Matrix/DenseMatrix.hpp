@@ -58,12 +58,12 @@ public:
         if (i >= H_ || i < 0) {
             std::stringstream buff;
             buff << "Index more H size! H size " << H_ << "! Index " << i << "!" << std::endl;
-            throw Slae::SlaeBaseExceptionCpp(buff.str());
+            throw Slae::SlaeBaseException(buff.str());
         }
         if (j >= W_ || j < 0) {
             std::stringstream buff;
             buff << "Index more W size! W size " << W_ << "! Index " << j << "!" << std::endl;
-            throw Slae::SlaeBaseExceptionCpp(buff.str());
+            throw Slae::SlaeBaseException(buff.str());
         }
 #endif //NDEBUG
 
@@ -82,12 +82,12 @@ public:
         if (i >= H_ || i < 0) {
             std::stringstream buff;
             buff << "Index more H size! H size " << H_ << "! Index " << i << "!" << std::endl;
-            throw Slae::SlaeBaseExceptionCpp(buff.str());
+            throw Slae::SlaeBaseException(buff.str());
         }
         if (j >= W_ || j < 0) {
             std::stringstream buff;
             buff << "Index more W size! W size " << W_ << "! Index " << j << "!" << std::endl;
-            throw Slae::SlaeBaseExceptionCpp(buff.str());
+            throw Slae::SlaeBaseException(buff.str());
         }
 #endif //NDEBUG
 

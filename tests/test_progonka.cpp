@@ -27,7 +27,7 @@ TEST(MATRIX_THREE, EXCEPTION_I) {
     bool isCaught = false;
     try {
         my_matr(7, 0);
-    } catch (const Slae::SlaeBaseExceptionCpp &err) {
+    } catch (const Slae::SlaeBaseException &err) {
         isCaught = true;
     }
     ASSERT_TRUE(isCaught);
@@ -40,7 +40,7 @@ TEST(MATRIX_THREE, EXCEPTION_J) {
     bool isCaught = false;
     try {
         my_matr(0, 5);
-    } catch (const Slae::SlaeBaseExceptionCpp &err) {
+    } catch (const Slae::SlaeBaseException &err) {
         isCaught = true;
     }
     ASSERT_TRUE(isCaught);
