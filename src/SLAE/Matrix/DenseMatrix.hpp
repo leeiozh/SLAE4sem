@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <set>
+#include "cmath"
 #include "SLAE/SlaeBaseException.hpp"
 #include "SLAE/Utility/Triplet.hpp"
 
@@ -128,5 +129,29 @@ public:
     };
 
 };
+
+template <typename T>
+DenseMatrix<T> makeOrtoMatrix(int size) {
+    DenseMatrix<T> res(size, size);
+    for (int i = 0; i < size; ++i) {
+        std::srand(std::time(nullptr));
+        T angle = static_cast <T> (rand()) / (static_cast <T> (RAND_MAX / 2 / M_PI));
+        res(i, i) = std::cos(angle);
+        res(size - 1 - i, i) = std::sin(angle);
+        res(i, size - i - 1) = -std::sin(angle);
+        res(size - i - 1, size - i - 1) = std::cos(angle);
+    }
+    return res;
+}
+
+template <typename T>
+DenseMatrix<T> transpose(const DenseMatrix<T>& inp) {
+    DenseMatrix<T> res(inp.sizeH(), inp.sizeW());
+    for (int i = 0; i < inp.sizeH(); i++) {
+        for (int j = 0; j < inp.sizeW(); j++) {
+            res(i, j) = inp(j, i);
+        }
+    }
+}
 
 #endif//SLAE_DENSEMATRIX_HPP
